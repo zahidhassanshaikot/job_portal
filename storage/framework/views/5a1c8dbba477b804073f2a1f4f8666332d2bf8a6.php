@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="application-name" content="">
-	<meta name="description" content="">
-	<title>Login Page</title>
-
-	<?php require 'header.php'; ?>
-
+<?php $__env->startSection('content'); ?>
 	<section id="login-page">
 		<div class="container">
 			<div class="row">
@@ -22,11 +11,12 @@
 						<label for="password">Password</label>
 						<input type="password" placeholder="Enter your password" id="password">
 						<button class="submit-btn">Login</button>
-						<p>Don't have account ? <a href="register.php">Sign Up Here</a></p>
+						<p>Don't have account ? <a href="<?php echo e(route('user-ragistration')); ?>">Sign Up Here</a></p>
 					</form>
 				</div>
 				<div class="col-sm-12 col-md-2 col-lg-2"></div>
 			</div>
 		</div>
 	</section>
-	<?php require 'footer.php'; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('back-end.master', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

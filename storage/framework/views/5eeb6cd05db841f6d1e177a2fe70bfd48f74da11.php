@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="application-name" content="">
-	<meta name="description" content="">
-	<title>Registration Page</title>
-
-	<?php require 'header.php'; ?>
-
+<?php $__env->startSection('content'); ?>
 	<section id="register-page">
 		<div class="container">
 			<div class="row">
@@ -45,11 +34,12 @@
 							<label for="checkbox">Agree the turm and policy</label>
 						</div>
 						<button class="submit-btn">Submit</button>
-						<p>Already have an accout ? <a href="login.php">Log In</a></p>
+						<p>Already have an accout ? <a href="<?php echo e(route('user-login')); ?>">Log In</a></p>
 					</form>
 				</div>
 				<div class="col-sm-12 col-md-2 col-lg-2"></div>
 			</div>
 		</div>
 	</section>
-	<?php require 'footer.php'; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('back-end.master', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

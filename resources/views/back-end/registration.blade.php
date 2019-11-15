@@ -1,72 +1,45 @@
 @extends('back-end.master')
 @section('content')
-
-<section class="login-page">
-    
-  <div class= "container">
-   <div class="alert alert-secondary" role="alert">
-        <h3 class= "text-center"> Registration </h3>
-                  
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                
-
-        <div class= "row">
-
-          <div class= "col">
-            <form class="Registration-form" action="{{ route('save-user-info') }}" method="POST">
-               @csrf
-               
-               <label> Gender </label>
-               <input style= "margin-bottom:5px" class="form-control" type="text" name = "designation" placeholder="Mr./Mrs./Ms./MD.">
-               <label> Enter your name: </label>
-               <input style= "margin-bottom:5px" class="form-control" type="text" name = "name" >
-                <label> Enter email: </label>
-               <input style= "margin-bottom:5px" class="form-control" type="email" name = "email" >
-               <label> Enter your fathers name: </label>
-               <input style= "margin-bottom:5px" class="form-control" type="text" name = "father_name" >
-
-               
-
-               <label> Enter village: </label>
-               <input style= "margin-bottom:5px" class="form-control" type="text" name = "village" >
-               <label> Enter P.O: </label>
-               <input style= "margin-bottom:5px" class="form-control" type="text" name = "post_office" >
-               <label> Enter thana: </label>
-               <input style= "margin-bottom:5px" class="form-control" type="text" name = "thana" >
-               <label> Enter district: </label>
-               <input style= "margin-bottom:5px" class="form-control" type="text" name = "district" >
-                                
-
-               <label> Enter cell number: </label>
-               <input style= "margin-bottom:8px" class="form-control" type="text" name = "phone_no" >
-           
-
-               <label> Password: </label>
-               <input style= "margin-bottom:8px" class="form-control" type="password" name = "password" >
-           
-
-               <label> Confirm Password: </label>
-               <input style= "margin-bottom:8px" class="form-control" type="password" name = "password_confirmation" >
-           
-               <input type="submit" name="btn" class="btn btn-info btn-inline" value="Sign In">
-               {{--  <button class="btn btn-info btn-inline">Sign In</button>  --}}
-               <p>If you have an account.Please <a href="{{ route('user-login') }}">Sign In</a> Here</p>
-
-            </form>
-          </div>
-
-        </div>
-
-
-   </div> <!---alert -->
-  </div>
-</section>
+	<section id="register-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-2 col-lg-2"></div>
+				<div class="col-sm-12 col-md-6 col-lg-8">
+					<form action="" class="register-form">
+						<h2>Register Form</h2>
+						<label for="first-name">Fisrt Name</label>
+						<input type="text" placeholder="First Name" id="first-name">
+						<label for="last-name">Last Name</label>
+						<input type="text" placeholder="Last Name" id="last-name">
+						<label for="email">Email</label>
+						<input type="email" placeholder="Enter your mail" id="email">
+						<label for="phone">Phone</label>
+						<input type="text" placeholder="Enter your phone number" id="phone">
+						<label for="password">Password</label>
+						<input type="password" placeholder="Enter password" id="password">
+						<div class="type">
+							<h5>Register as a</h5>
+							<ul>
+								<li>
+									<input type="radio" id="user" name="type">
+									<label for="user">User</label>
+								</li>
+								<li>
+									<input type="radio" id="employer" name="type">
+									<label for="employer">Employer</label>
+								</li>
+							</ul>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" required id="checkbox">
+							<label for="checkbox">Agree the turm and policy</label>
+						</div>
+						<button class="submit-btn">Submit</button>
+						<p>Already have an accout ? <a href="{{ route('user-login') }}">Log In</a></p>
+					</form>
+				</div>
+				<div class="col-sm-12 col-md-2 col-lg-2"></div>
+			</div>
+		</div>
+	</section>
 @endsection

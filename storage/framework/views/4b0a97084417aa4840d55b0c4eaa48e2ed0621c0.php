@@ -1,24 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="application-name" content="">
-	<meta name="description" content="">
-	<title>Candidate Lists</title>
-
-	<?php require 'header.php'; ?>
+<?php $__env->startSection('content'); ?>
 
 	<section id="employer-page">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-4 col-lg-4">
-					<?php require "sidebar/sidebar.php" ?>
+					<?php echo $__env->make('sidebar/sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 				</div>
 				<div class="col-sm-12 col-md-6 col-lg-8">
 					<div class="table-title">
-						<h3>Candidates List for Software Engineer</h3>
+						<h3>Select List for Software Engineer</h3>
 					</div>
 					<table class="table table-striped table-bordered">
 					    <thead>
@@ -39,9 +29,6 @@
 						        <td>
 						        	<ul>
 						        		<li>
-						        			<a href="#" class="select">Select</a>
-						        		</li>
-						        		<li>
 						        			<a href="#" class="pending">Pending</a>
 						        		</li>
 						        		<li>
@@ -57,9 +44,6 @@
 						        <td>01728242323</td>
 						        <td>
 						        	<ul>
-						        		<li>
-						        			<a href="#" class="select">Select</a>
-						        		</li>
 						        		<li>
 						        			<a href="#" class="pending">Pending</a>
 						        		</li>
@@ -77,9 +61,6 @@
 						        <td>
 						        	<ul>
 						        		<li>
-						        			<a href="#" class="select">Select</a>
-						        		</li>
-						        		<li>
 						        			<a href="#" class="pending">Pending</a>
 						        		</li>
 						        		<li>
@@ -96,9 +77,6 @@
 						        <td>
 						        	<ul>
 						        		<li>
-						        			<a href="#" class="select">Select</a>
-						        		</li>
-						        		<li>
 						        			<a href="#" class="pending">Pending</a>
 						        		</li>
 						        		<li>
@@ -113,4 +91,5 @@
 			</div>
 		</div>
 	</section>
-	<?php require 'footer.php'; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('back-end.master', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

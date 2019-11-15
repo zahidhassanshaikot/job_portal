@@ -40,19 +40,19 @@
 			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('training')); ?>">Training</a>
 			      </li>
 			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger dropdown" href="employer.php">Employers</a>
+			        <a class="nav-link js-scroll-trigger dropdown" href="<?php echo e(route('employer')); ?>">Employers</a>
 			      </li>
 			      <li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify">3</span></div></a>
 			      </li>
 			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger" href="post-job.php">Post Job</a>
+			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('post-job')); ?>">Post Job</a>
 			      </li>
 			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger" href="login.php">Login</a>
+			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('user-login')); ?>">Login</a>
 			      </li>
 			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger" href="register.php">Register</a>
+			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('user-ragistration')); ?>">Register</a>
 			      </li>
 			    </ul>
 			</div>

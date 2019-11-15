@@ -14,14 +14,14 @@
 							<div class="feature-image">
 								<img src="<?php echo e(asset('design')); ?>/img/1.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">App Developer</a></h2>
+							<h2 class="job-title"><a href="<?php echo e(route('single-job-post')); ?>">App Developer</a></h2>
 							<p>Salary: <span>50000</span></p>
 							<div class="job-description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ex sed repellat facere consectetur natus iste, quae voluptate accusantium sunt.....</p>
-								<a href="single-job-post.php" class="see-more-btn">See More</a>
+								<a href="<?php echo e(route('single-job-post')); ?>" class="see-more-btn">See More</a>
 							</div>
 							<div class="apply-btn">
-								<a href="single-job-post.php">Apply</a>
+								<a href="<?php echo e(route('single-job-post')); ?>">Apply</a>
 							</div>
 							<div class="post-meta">
 								<ul>
@@ -45,14 +45,14 @@
 							<div class="feature-image">
 								<img src="<?php echo e(asset('design')); ?>/img/2.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">Graphic Designer</a></h2>
+							<h2 class="job-title"><a href="<?php echo e(route('single-job-post')); ?>">Graphic Designer</a></h2>
 							<p>Salary: <span>20000</span></p>
 							<div class="job-description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ex sed repellat facere consectetur natus iste, quae voluptate accusantium sunt.....</p>
-								<a href="single-job-post.php" class="see-more-btn">See More</a>
+								<a href="<?php echo e(route('single-job-post')); ?>" class="see-more-btn">See More</a>
 							</div>
 							<div class="apply-btn">
-								<a href="single-job-post.php">Apply</a>
+								<a href="<?php echo e(route('single-job-post')); ?>">Apply</a>
 							</div>
 							<div class="post-meta">
 								<ul>
@@ -76,14 +76,14 @@
 							<div class="feature-image">
 								<img src="<?php echo e(asset('design')); ?>/img/3.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">Web Designer</a></h2>
+							<h2 class="job-title"><a href="<?php echo e(route('single-job-post')); ?>">Web Designer</a></h2>
 							<p>Salary: <span>20000</span></p>
 							<div class="job-description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ex sed repellat facere consectetur natus iste, quae voluptate accusantium sunt.....</p>
-								<a href="single-job-post.php" class="see-more-btn">See More</a>
+								<a href="<?php echo e(route('single-job-post')); ?>" class="see-more-btn">See More</a>
 							</div>
 							<div class="apply-btn">
-								<a href="single-job-post.php">Apply</a>
+								<a href="<?php echo e(route('single-job-post')); ?>">Apply</a>
 							</div>
 							<div class="post-meta">
 								<ul>
@@ -107,14 +107,14 @@
 							<div class="feature-image">
 								<img src="<?php echo e(asset('design')); ?>/img/1.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">App Developer</a></h2>
+							<h2 class="job-title"><a href="<?php echo e(route('single-job-post')); ?>">App Developer</a></h2>
 							<p>Salary: <span>50000</span></p>
 							<div class="job-description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ex sed repellat facere consectetur natus iste, quae voluptate accusantium sunt.....</p>
-								<a href="single-job-post.php" class="see-more-btn">See More</a>
+								<a href="<?php echo e(route('single-job-post')); ?>" class="see-more-btn">See More</a>
 							</div>
 							<div class="apply-btn">
-								<a href="single-job-post.php">Apply</a>
+								<a href="<?php echo e(route('single-job-post')); ?>">Apply</a>
 							</div>
 							<div class="post-meta">
 								<ul>
@@ -138,14 +138,14 @@
 							<div class="feature-image">
 								<img src="<?php echo e(asset('design')); ?>/img/2.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">Graphic Designer</a></h2>
+							<h2 class="job-title"><a href="<?php echo e(route('single-job-post')); ?>">Graphic Designer</a></h2>
 							<p>Salary: <span>20000</span></p>
 							<div class="job-description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ex sed repellat facere consectetur natus iste, quae voluptate accusantium sunt.....</p>
-								<a href="single-job-post.php" class="see-more-btn">See More</a>
+								<a href="<?php echo e(route('single-job-post')); ?>" class="see-more-btn">See More</a>
 							</div>
 							<div class="apply-btn">
-								<a href="single-job-post.php">Apply</a>
+								<a href="<?php echo e(route('single-job-post')); ?>">Apply</a>
 							</div>
 							<div class="post-meta">
 								<ul>
@@ -169,14 +169,14 @@
 							<div class="feature-image">
 								<img src="<?php echo e(asset('design')); ?>/img/3.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">Web Designer</a></h2>
+							<h2 class="job-title"><a href="<?php echo e(route('single-job-post')); ?>">Web Designer</a></h2>
 							<p>Salary: <span>20000</span></p>
 							<div class="job-description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ex sed repellat facere consectetur natus iste, quae voluptate accusantium sunt.....</p>
-								<a href="single-job-post.php" class="see-more-btn">See More</a>
+								<a href="<?php echo e(route('single-job-post')); ?>" class="see-more-btn">See More</a>
 							</div>
 							<div class="apply-btn">
-								<a href="single-job-post.php">Apply</a>
+								<a href="<?php echo e(route('single-job-post')); ?>">Apply</a>
 							</div>
 							<div class="post-meta">
 								<ul>

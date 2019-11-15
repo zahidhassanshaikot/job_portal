@@ -20,10 +20,21 @@ Route::get('user-login', 'DeshboardController@userLogin')->name('user-login');
 Route::get('user-registration', 'DeshboardController@userReg')->name('user-ragistration');
 Route::post('save-user-info', 'DeshboardController@saveUserInfo')->name('save-user-info');
 
+
 Route::get('jobs', 'JobController@jobs')->name('jobs');
 Route::get('my-job', 'JobController@myJobs')->name('my-job');
+Route::get('post-job', 'JobController@postJob')->name('post-job');
+Route::get('single-job-post', 'JobController@singleJobPost')->name('single-job-post');
+Route::get('post-job-list', 'JobController@postJobList')->name('post-job-list');
+Route::get('candidate-list', 'JobController@candidateList')->name('candidate-list');
+Route::get('candidate-status/{status}', 'JobController@candidateStatus')->name('candidate-status');
+
+
 Route::get('training', 'TrainingController@training')->name('training');
-Route::get('employer', 'TrainingController@training')->name('employer');
+Route::get('single-training-post', 'TrainingController@singleTrainingPost')->name('single-training-post');
+
+Route::get('employer', 'EmployerController@employer')->name('employer');
+
 
 
 

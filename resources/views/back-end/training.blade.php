@@ -15,13 +15,13 @@
 							<div class="feature-image">
 								<img src="{{asset('design')}}/img/training1.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">Professional Web Design</a></h2>
+							<h2 class="job-title"><a href="{{ route('single-training-post') }}">Professional Web Design</a></h2>
 							<p>TK: <span>15000</span></p>
 							<div class="job-description">
 								<p>Total Hour: 20</p>
 							</div>
 							<div class="apply-btn">
-								<a href="single-training-post.php">Enrol Now</a>
+								<a href="{{ route('single-training-post') }}">Enrol Now</a>
 							</div>
 						</div>
 					</article>
@@ -32,13 +32,13 @@
 							<div class="feature-image">
 								<img src="{{asset('design')}}/img/training2.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">Web Design and Development</a></h2>
+							<h2 class="job-title"><a href="{{ route('single-training-post') }}">Web Design and Development</a></h2>
 							<p>TK: <span>20000</span></p>
 							<div class="job-description">
 								<p>Total Hour: 30</p>
 							</div>
 							<div class="apply-btn">
-								<a href="single-training-post.php">Enrol Now</a>
+								<a href="{{ route('single-training-post') }}">Enrol Now</a>
 							</div>
 						</div>
 					</article>
@@ -49,13 +49,13 @@
 							<div class="feature-image">
 								<img src="{{asset('design')}}/img/training3.jpg" alt="">
 							</div>
-							<h2 class="job-title"><a href="single-job-post.php">Professional Web Development(Laravel)</a></h2>
+							<h2 class="job-title"><a href="{{ route('single-training-post') }}">Professional Web Development(Laravel)</a></h2>
 							<p>TK: <span>25000</span></p>
 							<div class="job-description">
 								<p>Total Hour: 40</p>
 							</div>
 							<div class="apply-btn">
-								<a href="single-training-post.php">Enrol Now</a>
+								<a href="{{ route('single-training-post') }}">Enrol Now</a>
 							</div>
 						</div>
 					</article>

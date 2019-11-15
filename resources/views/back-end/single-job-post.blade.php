@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="application-name" content="">
-	<meta name="description" content="">
-	<title>Job Posts</title>
-
-	<?php require 'header.php'; ?>
-
+@extends('back-end.master')
+@section('content')
 	<section id="job-page">
 		<div class="container">
 			<div class="row">
@@ -48,5 +38,4 @@
 			</div>
 		</div>
 	</section>
-	<?php require 'popup-message/popup-message.php'; ?>
-	<?php require 'footer.php'; ?>
+@endsection

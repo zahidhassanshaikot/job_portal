@@ -1,35 +1,22 @@
 @extends('back-end.master')
 @section('content')
-<section class="login-page"> 
-  <div class= "container">
-   <div class="alert alert-secondary" role="alert">
-        <h3 class= "text-center"> Online Police Service </h3>
-
-        <div class= "row">
-
-          <div class= "col">
-            <form class="Login-form" action="{{ route('login') }}" method="POST">
-               @csrf
-               
-               
-               <label> Email Address</label>
-               <input style= "margin-bottom:5px" class="form-control" type="text" placeholder="Enter Your Email Address" name = "email">
-
-               <label> Password </label>
-               <input style= "margin-bottom:5px" class="form-control" type="password" placeholder="Enter Password" id="pass"name="password" required >
-               
-           
-               <input type="submit" class="btn btn-info btn-inline" value="Login" name="btn"
-               {{--  <button class="btn btn-info btn-inline">Login</button>  --}}
-               <p>If you don't have account.Please <a href="{{ route('user-ragistration') }}">Sign Up</a></p>
-
-            </form>
-          </div>
-
-        </div>
-
-
-   </div> <!---alert -->
-  </div>
-</section>
+	<section id="login-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-2 col-lg-2"></div>
+				<div class="col-sm-12 col-md-6 col-lg-8">
+					<form action="" class="register-form">
+						<h2>Login Page</h2>
+						<label for="email">Email</label>
+						<input type="email" placeholder="Enter your valid email" id="email">
+						<label for="password">Password</label>
+						<input type="password" placeholder="Enter your password" id="password">
+						<button class="submit-btn">Login</button>
+						<p>Don't have account ? <a href="{{ route('user-ragistration') }}">Sign Up Here</a></p>
+					</form>
+				</div>
+				<div class="col-sm-12 col-md-2 col-lg-2"></div>
+			</div>
+		</div>
+	</section>
 @endsection
