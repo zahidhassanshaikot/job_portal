@@ -1,0 +1,614 @@
+:root {
+
+  --primary-color: #009933;
+  --primary-text-color: #37356a;
+
+}
+
+/*============================================*/
+/************** Default Css ************/
+/*==========================================*/
+* {
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.7em;
+  font-weight: 400;
+  background: #fff;
+  transition: all 0.5s ease;
+  color: var(--primary-text-color);
+  overflow-x: hidden;
+}
+
+::-moz-selection {
+  background: #009933;
+  color: #fff;
+}
+
+::selection {
+  background: rgba(0, 153, 51, .8);
+  color: #fff;
+}
+
+a {
+  border: 0px solid transparent;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  color: #00b33c;
+}
+
+a:hover {
+  color: #00b33c;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.33em;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, table {
+  margin: 0 0 18px;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 20px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:focus,
+.edd-submit.button:focus,
+[type=submit].edd-submit:focus,
+button:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+/************** Navbar Css ************/
+header {
+  box-sizing: border-box;
+  transition: 1s;
+  z-index: 3;
+  padding: 0 30px;
+  background: var(--primary-color);
+  box-shadow: 0px 0px 25.5px 4.5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+  color:#f2f2f2;
+  transition: all 0.5s ease;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0px;
+  font-size: 16px;
+  margin-left: 25px;
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
+
+.navbar {
+  padding: 0.5rem 1rem 0.8em;
+}
+
+.logo {
+  color: #f2f2f2;
+}
+
+.logo:hover {
+  color: #f2f2f2;
+}
+
+.navbar-brand img {
+  max-height: 70px;
+  transition: all 0.5s ease;
+}
+
+.navbar .navbar-toggler {
+  border: var(--border-ld);
+}
+
+.nav-item a.nav-btn::after {
+  height: 0px;
+}
+
+.nav-item a {
+  position: relative;
+}
+
+.menu-padding .nav-link:hover .dropdown-menu {
+  display: block;
+}
+
+.bg-light {
+  background: transparent!important;
+}
+.navbar {
+    padding: .5rem 0rem;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255,255,255,.9);
+  padding: 10px 14px;
+}
+.nav-link{
+  position: relative;
+}
+.navbar-light .navbar-nav .nav-item:hover .nav-link:before{
+  content: ". . .";
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+}
+.navbar-brand a p{
+  color: #ffffff;
+}
+
+.notification {
+  background: #fff;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 3px;
+  right: -9px;
+  border-radius: 100%;
+}
+
+.notify {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary-color);
+  border-radius: 100%;
+  position: relative;
+  top: -6px;
+  left: 4px;
+}
+
+.notifications ul li {
+  list-style-type: disc;
+}
+
+#notification .modal-content {
+  padding: 30px;
+}
+
+
+/************** Hero Css ************/
+#hero {
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+/************** How it Works Css ************/
+#how-it-work {
+  background: #f2f2f2;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.page-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.work-process {
+  padding: 0 30px;
+  text-align: center;
+}
+
+.process-icon {
+  font-size: 48px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/************** Job Page Css ************/
+#job-page {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.job-feature {
+  padding: 30px 15px;
+  margin-bottom: 45px;
+  box-shadow: 1px 2px 20px 2px rgba(191,191,191,.4);
+}
+
+.job-details .feature-image {
+  height: 130px;
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 15px;
+}
+
+.job-title {
+  font-size: 26px;
+}
+
+.job-description {
+  padding-bottom: 10px;
+}
+
+.see-more-btn {
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.see-more-btn:hover {
+  text-decoration: underline;
+}
+
+.apply-btn a {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid var(--primary-color);
+}
+
+.apply-btn a:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.post-meta {
+  padding-top: 30px;
+}
+
+.post-meta ul li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.job-description {
+  margin-bottom: 10px;
+}
+
+
+/************** Single Job Page Css ************/
+.job-descriptions {
+  padding: 30px 60px;
+  box-shadow: 0 0 14px rgba(191,191,191,.24);
+}
+
+
+.job-descriptions .title {
+  padding-bottom: 30px;
+}
+
+.description {
+  padding-bottom: 45px;
+}
+
+.requirement {
+  padding-bottom: 45px;
+}
+
+.how-apply .apply-btn {
+  margin-top: 30px;
+}
+
+
+
+/************** Register Form Css ************/
+#register-page {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.register-form {
+  box-shadow: 0 0 14px rgba(191,191,191,.24);
+  padding: 30px;
+}
+
+.register-form input {
+  width: 100%;
+  padding-left: 15px;
+  height: 40px;
+  margin-bottom: 15px;
+  border: 1px solid #ececec;
+  transition: all .5s;
+}
+
+.register-form input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.register-form input[type="checkbox"] {
+  width: auto!important;
+  height: auto!important;
+}
+
+.register-form input[type="radio"] {
+  width: auto!important;
+  height: auto!important;
+}
+
+.type {
+  margin-bottom: 30px;
+}
+
+.type ul li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.checkbox {
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  border: 1px solid var(--primary-color);
+  padding: 7px 15px;
+  color: var(--primary-color);
+  background: #fff;
+  margin-bottom: 30px;
+}
+
+.submit-btn:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+/************** Login Form Css ************/
+#login-page {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/************** Post Job Css ************/
+.post-job textarea {
+  height: 200px;
+  width: 100%;
+  border: 1px solid #ececec;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.post-job .title {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+/************** Single Training Css ************/
+
+.outline li {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/************** Employer Css ************/
+#employer-page {
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+.sidebar {
+  height: 80vh;
+  border: 1px solid #ececec;
+  padding: 30px 0;
+}
+
+.sidebar .title {
+  padding: 15px 30px;
+  background: #f2f7fb;
+}
+
+.sidebar-items {
+  padding: 15px 0px;
+}
+
+.sidebar-items li {
+  border: 1px solid #ececce;
+}
+
+.sidebar-items li a{
+  padding: 10px 30px;
+  display: block;
+}
+
+.select {
+  padding: 5px 10px;
+  background: var(--primary-color);
+  display: inline-block;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 7px;
+}
+
+.select:hover {
+  color: #fff;
+}
+
+.pending {
+  padding: 5px 10px;
+  background: #ffc107;
+  display: inline-block;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 7px;
+}
+
+.pending:hover {
+  color: #fff;
+}
+
+.elinimate {
+  padding: 5px 10px;
+  background: #dc3545;
+  display: inline-block;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 7px;
+}
+
+.elinimate:hover {
+  color: #fff;
+}
+
+.table-title h3 {
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+/************** Footer Css ************/
+footer {
+  padding-top: 25px;
+  padding-bottom: 15px;
+  background: var(--primary-color);
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+/************** Popup Message Css ************/
+.open-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+  box-shadow: 0px 10px 5px rgba(0,0,0,0.5);
+  border-radius: 5px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
