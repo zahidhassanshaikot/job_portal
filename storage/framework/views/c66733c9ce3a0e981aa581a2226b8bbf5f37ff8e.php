@@ -47,13 +47,25 @@
 			      </li>
 			      <li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('post-job')); ?>">Post Job</a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
+				  </li>
+				  <?php if(auth()->guard()->guest()): ?>
+					<li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('user-login')); ?>">Login</a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('user-ragistration')); ?>">Register</a>
-			      </li>
+					</li>
+					<li class="nav-item dropdown menu-padding">
+						<a class="nav-link js-scroll-trigger" href="<?php echo e(route('user-ragistration')); ?>">Register</a>
+					</li>
+				  <?php endif; ?>
+				  <?php if(auth()->guard()->check()): ?>
+					  <li class="nav-item dropdown menu-padding">
+						<a class="nav-link js-scroll-trigger" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">Logout</a>
+						 <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                            <?php echo csrf_field(); ?>
+                            </form>
+					</li>
+				  <?php endif; ?>
+			      
 			    </ul>
 			</div>
 		</nav>

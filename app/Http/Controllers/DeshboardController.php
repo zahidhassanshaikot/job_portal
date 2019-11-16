@@ -30,28 +30,22 @@ class DeshboardController extends Controller
     }
     public function saveUserInfo(Request $request){
         $this->validate($request, [
-            'name' => 'required|max:30|min:2',
+            'fname' => 'required|max:30|min:2',
+            'lname' => 'required|max:30|min:2',
             'email' => 'email|unique:users,email|required',
-            'father_name' => 'required',
+            
             'password' => ['required',
-                'min:6',
-                'confirmed'],
-            'password_confirmation' => 'required_with:password|same:password',
+                'min:6'],
         ]);
 
             $user = new User();
-            $user->name = $request->name;
+            $user->fname = $request->fname;
+            $user->lname = $request->lname;
             $user->email = $request->email;
-            $user->father_name = $request->father_name;
-            $user->designation = $request->designation;
-            $user->village = $request->village;
-            $user->post_office = $request->post_office;
-            $user->thana = $request->thana;
-            $user->district = $request->district;
             $user->phone_no = $request->phone_no;
             $user->password = Hash::make($request->password);
             $user->save();
-            $user->attachRole(Role::where('name', 'User')->first());
+            $user->attachRole(Role::where('name', $request->type)->first());
             Auth::login($user);
             
 

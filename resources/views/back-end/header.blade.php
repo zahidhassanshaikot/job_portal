@@ -47,13 +47,25 @@
 			      </li>
 			      <li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger" href="{{ route('post-job') }}">Post Job</a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
+				  </li>
+				  @guest
+					<li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger" href="{{ route('user-login') }}">Login</a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger" href="{{ route('user-ragistration') }}">Register</a>
-			      </li>
+					</li>
+					<li class="nav-item dropdown menu-padding">
+						<a class="nav-link js-scroll-trigger" href="{{ route('user-ragistration') }}">Register</a>
+					</li>
+				  @endguest
+				  @auth
+					  <li class="nav-item dropdown menu-padding">
+						<a class="nav-link js-scroll-trigger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">Logout</a>
+						 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                            </form>
+					</li>
+				  @endauth
+			      
 			    </ul>
 			</div>
 		</nav>
