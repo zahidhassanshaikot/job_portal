@@ -16,5 +16,25 @@
 	<script src="{{asset('design')}}/js/vendor/bootstrap.min.js"></script>
 	<script src="{{asset('design')}}/js/vendor/jquery.min.js"></script>
 	<script src="{{asset('design')}}/js/index.js"></script>
+
+	<script src="{{asset('ckeditor5')}}/ckeditor.js"></script>
+	<script>
+	ClassicEditor
+		.create( document.querySelector( '#editor' ), {
+			
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+
+		CKEDITOR.replace("#editor",
+		{
+			height: 100
+		});
+	</script>
 </body>
 </html>

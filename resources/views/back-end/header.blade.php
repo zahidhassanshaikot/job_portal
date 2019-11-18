@@ -13,6 +13,7 @@
 
 	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="{{asset('design')}}/css/style.css">
+		<link type="text/css" href="{{asset('ckeditor5')}}/sample/css/sample.css" rel="stylesheet" media="screen" />
 </head>
 <body>
 

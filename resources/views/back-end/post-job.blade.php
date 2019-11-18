@@ -14,8 +14,8 @@
 						<input type="text" placeholder="Write Company Name" id="company">
 						<label for="location">Location</label>
 						<input type="text" placeholder="Location" id="location">
-						<label for="job-description">Job Description</label>
-						<textarea id="job-description" cols="30" rows="10" placeholder="Job Description"></textarea>
+						<label for="editor">Job Description</label>
+						<textarea id="editor" cols="30" rows="30" placeholder="Job Description"></textarea>
 						<label for="applied-email">Application email/ URL</label>
 						<input type="text" placeholder="Enter email address or website URL" id="applied-email">
 						<label for="applied-email">Closing Date</label>

@@ -13,6 +13,7 @@
 
 	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="<?php echo e(asset('design')); ?>/css/style.css">
+		<link type="text/css" href="<?php echo e(asset('ckeditor5')); ?>/sample/css/sample.css" rel="stylesheet" media="screen" />
 </head>
 <body>
 
