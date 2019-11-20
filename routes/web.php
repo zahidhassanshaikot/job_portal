@@ -24,7 +24,8 @@ Route::post('save-user-info', 'DeshboardController@saveUserInfo')->name('save-us
 Route::get('jobs', 'JobController@jobs')->name('jobs');
 Route::get('my-job', 'JobController@myJobs')->name('my-job');
 Route::get('post-job', 'JobController@postJob')->name('post-job');
-Route::get('single-job-post', 'JobController@singleJobPost')->name('single-job-post');
+Route::post('post-job', 'JobController@savePostJob')->name('save-job-post-info');
+Route::get('single-job-post/{id}', 'JobController@singleJobPost')->name('single-job-post');
 Route::get('post-job-list', 'JobController@postJobList')->name('post-job-list');
 Route::get('candidate-list', 'JobController@candidateList')->name('candidate-list');
 Route::get('candidate-status/{status}', 'JobController@candidateStatus')->name('candidate-status');

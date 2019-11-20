@@ -96,7 +96,7 @@ header nav ul li a:hover {
 }
 
 header nav ul li:last-child a::before {
-	content: url(../img/github.svg);
+	/* content: url(../img/github.svg); */
 	width: 1.4em;
 	height: 1.4em;
 	display: inline-block;
