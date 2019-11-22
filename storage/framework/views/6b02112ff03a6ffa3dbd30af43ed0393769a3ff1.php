@@ -8,9 +8,7 @@
 						<h2>Find Job</h2>
 					</div>
 				</div>
-<?php $__currentLoopData = $jobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-	
-
+			<?php $__currentLoopData = $jobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 				<div class="col-sm-12 col-md-4 col-lg-4">
 					<article class="job-feature">
 						<div class="job-details">
@@ -42,9 +40,11 @@
 						</div>
 					</article>
 				</div>
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-				
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
 			</div>
+			<?php echo $jobs->links(); ?>
+
 		</div>
 	</section>
 

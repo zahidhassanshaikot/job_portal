@@ -11,7 +11,7 @@
 					<table class="table table-striped table-bordered">
 					    <thead>
 					      	<tr>
-						        <th>#No</th>
+						        <th>Id</th>
 						        <th>Job Title</th>
 					        	<th>Post Date</th>
 					        	<th>Deadline</th>
@@ -20,38 +20,21 @@
 					      	</tr>
 					    </thead>
 					    <tbody>
+							@foreach ($jobs as $job) 
 					      	<tr>
-						        <td>01</td>
-						        <td>Software Engineer</td>
-						        <td>Wed, Aug 21, 2019 11:24 AM</td>
-						        <td>Sun, Aug 25, 2019 12:00 AM</td>
-						        <td>10</td>
+						        <td>{{ $job->id }}</td>
+						        <td>{{ $job->job_title }}</td>
+						        <td>{{ $job->created_at }}</td>
+						        <td>{{ $job->last_date }}</td>
+						        <td>
+									@php
+										$total=App\JobApply::where('job_post_id', $job->id)->count();
+									@endphp
+									{{ $total }}
+								</td>
 						        <td><a href="{{ route('candidate-list') }}">Show List</a></td>
 					      	</tr>
-					      	<tr>
-						        <td>02</td>
-						        <td>Web Developer</td>
-						        <td>Wed, Aug 21, 2019 11:24 AM</td>
-						        <td>Sun, Aug 25, 2019 12:00 AM</td>
-						        <td>5</td>
-						        <td><a href="{{ route('candidate-list') }}">Show List</a></td>
-					      	</tr>
-					      	<tr>
-						        <td>03</td>
-						        <td>Software Engineer</td>
-						        <td>Wed, Aug 21, 2019 11:24 AM</td>
-						        <td>Sun, Aug 25, 2019 12:00 AM</td>
-						        <td>9</td>
-						        <td><a href="{{ route('candidate-list') }}">Show List</a></td>
-					      	</tr>
-					      	<tr>
-						        <td>04</td>
-						        <td>Web Developer</td>
-						        <td>Wed, Aug 21, 2019 11:24 AM</td>
-						        <td>Sun, Aug 25, 2019 12:00 AM</td>
-						        <td>5</td>
-						        <td><a href="{{ route('candidate-list') }}">Show List</a></td>
-					      	</tr>
+							@endforeach
 					    </tbody>
 					  </table>
 				</div>

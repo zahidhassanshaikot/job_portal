@@ -2,20 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\JobApply;
 use App\JobPost;
 use Illuminate\Http\Request;
 use DB;
 use File;
+use Illuminate\Support\Facades\Auth;
 use Image;
 
 class JobController extends Controller
 {
     public function jobs(){
-        $jobs=JobPost::all();
+        $jobs=JobPost::orderBy('id', 'DESC')->paginate(12);
         return view('back-end.jobs',['jobs'=> $jobs]);
     }
     public function myJobs(){
-        return view('back-end.my-job');
+        $jobs = JobPost::join('job_apply', 'job_apply.job_post_id','=','job_post.id')
+        ->select('job_post.*')
+        ->orderBy('job_post.id', 'DESC')
+        ->where('job_apply.user_id','=', Auth::user()->id)
+        ->paginate(12);
+        return view('back-end.my-job', ['jobs'=> $jobs]);
     }
     public function postJob(){
         return view('back-end.post-job');
@@ -35,6 +42,7 @@ class JobController extends Controller
         
         $job=new JobPost();
         $job->job_title=$request->job_title;
+        $job->user_id=Auth::user()->id;
         $job->location=$request->location;
         $job->email=$request->email;
         $job->salary=$request->salary;
@@ -62,16 +70,50 @@ class JobController extends Controller
         return redirect()->back()->with('success','Successfully Added');
     }
     public function singleJobPost($id){
+        if (Auth::user()) {
         $job=JobPost::find($id);
-        return view('back-end.single-job-post',['job'=>$job]);
+        $applyCheck = JobApply::where('user_id', Auth::user()->id)->where('job_post_id',$id)->first();
+        return view('back-end.single-job-post',['job'=>$job, 'applyCheck'=> $applyCheck]);
+        }else{
+            return redirect()->route('user-login');
+        }
     }
     public function postJobList(){
-        return view('back-end.post-job-list');
+        $jobs = JobPost::where('user_id',Auth::user()->id)->get();
+        // return $jobs;
+        return view('back-end.post-job-list',['jobs'=>$jobs]);
     }
+    public function applyJob($id){
+        if(Auth::user()){
+        $apply = new JobApply();
+        $apply->user_id = Auth::user()->id;
+        $apply->job_post_id = $id;
+        $apply->save();
+        
+        return redirect()->back()->with('success','Applied successfully');
+        }else{
+        return redirect()->back()->with('error', 'Please login for apply');
+        }
+    }
+
+
+
     public function candidateList(){
-        return view('back-end.candidate-list');
+         $candidates = JobApply::join('users', 'job_apply.user_id','=','users.id')
+            ->join('job_post', 'job_apply.job_post_id', '=', 'job_post.id')
+            ->select('users.*', 'job_post.job_title', 'job_apply.status', 'job_apply.id as job_apply_id')
+            ->orderBy('job_apply.created_at', 'DESC')
+            ->where('job_post.user_id', '=', Auth::user()->id)->get();
+            // return $candidates;
+        return view('back-end.candidate-list',['candidates'=>$candidates]);
     }
     public function candidateStatus($status){
         return view('back-end.candidate-status');
+    }
+    public function changeStatus($status,$id){ 
+        $jobApply = JobApply::find($id);
+        $jobApply->status = $status;
+        $jobApply->save();
+        return redirect()->back()->with('success','Successfully change status');
     }
 }

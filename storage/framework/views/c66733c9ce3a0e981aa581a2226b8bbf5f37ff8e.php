@@ -33,22 +33,26 @@
 			      </li>
 			      <li class="nav-item">
 			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('jobs')); ?>">Jobs</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('my-job')); ?>">My Jobs</a>
-			      </li>
+				  </li>
+				 
 			      <li class="nav-item">
 			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('training')); ?>">Training</a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger dropdown" href="<?php echo e(route('employer')); ?>">Employers</a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify">3</span></div></a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('post-job')); ?>">Post Job</a>
 				  </li>
+				<?php if(auth()->guard()->check()): ?>
+				<li class="nav-item">
+			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('my-job')); ?>">My Jobs</a>
+				</li>
+				 <?php if(Auth::user()->hasRole(['Admin', 'Employer'])): ?>
+				 <li class="nav-item dropdown menu-padding">
+			        <a class="nav-link js-scroll-trigger dropdown" href="<?php echo e(route('employer')); ?>">Post Job</a>
+			      </li>
+			      
+				<?php endif; ?>
+				<li class="nav-item dropdown menu-padding">
+			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify">3</span></div></a>
+				  </li>
+				<?php endif; ?>
+				
 				  <?php if(auth()->guard()->guest()): ?>
 					<li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger" href="<?php echo e(route('user-login')); ?>">Login</a>

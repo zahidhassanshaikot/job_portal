@@ -29,6 +29,8 @@ Route::get('single-job-post/{id}', 'JobController@singleJobPost')->name('single-
 Route::get('post-job-list', 'JobController@postJobList')->name('post-job-list');
 Route::get('candidate-list', 'JobController@candidateList')->name('candidate-list');
 Route::get('candidate-status/{status}', 'JobController@candidateStatus')->name('candidate-status');
+Route::get('apply-job/{id}', 'JobController@applyJob')->name('apply-job');
+Route::get('status-change/{status}/{id}', 'JobController@changeStatus')->name('status-change');
 
 
 Route::get('training', 'TrainingController@training')->name('training');

@@ -10,7 +10,7 @@
 					<table class="table table-striped table-bordered">
 					    <thead>
 					      	<tr>
-						        <th>#No</th>
+						        <th>Id</th>
 						        <th>Job Title</th>
 					        	<th>Post Date</th>
 					        	<th>Deadline</th>
@@ -19,38 +19,22 @@
 					      	</tr>
 					    </thead>
 					    <tbody>
+							<?php $__currentLoopData = $jobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
 					      	<tr>
-						        <td>01</td>
-						        <td>Software Engineer</td>
-						        <td>Wed, Aug 21, 2019 11:24 AM</td>
-						        <td>Sun, Aug 25, 2019 12:00 AM</td>
-						        <td>10</td>
+						        <td><?php echo e($job->id); ?></td>
+						        <td><?php echo e($job->job_title); ?></td>
+						        <td><?php echo e($job->created_at); ?></td>
+						        <td><?php echo e($job->last_date); ?></td>
+						        <td>
+									<?php
+										$total=App\JobApply::where('job_post_id', $job->id)->count();
+									?>
+									<?php echo e($total); ?>
+
+								</td>
 						        <td><a href="<?php echo e(route('candidate-list')); ?>">Show List</a></td>
 					      	</tr>
-					      	<tr>
-						        <td>02</td>
-						        <td>Web Developer</td>
-						        <td>Wed, Aug 21, 2019 11:24 AM</td>
-						        <td>Sun, Aug 25, 2019 12:00 AM</td>
-						        <td>5</td>
-						        <td><a href="<?php echo e(route('candidate-list')); ?>">Show List</a></td>
-					      	</tr>
-					      	<tr>
-						        <td>03</td>
-						        <td>Software Engineer</td>
-						        <td>Wed, Aug 21, 2019 11:24 AM</td>
-						        <td>Sun, Aug 25, 2019 12:00 AM</td>
-						        <td>9</td>
-						        <td><a href="<?php echo e(route('candidate-list')); ?>">Show List</a></td>
-					      	</tr>
-					      	<tr>
-						        <td>04</td>
-						        <td>Web Developer</td>
-						        <td>Wed, Aug 21, 2019 11:24 AM</td>
-						        <td>Sun, Aug 25, 2019 12:00 AM</td>
-						        <td>5</td>
-						        <td><a href="<?php echo e(route('candidate-list')); ?>">Show List</a></td>
-					      	</tr>
+							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					    </tbody>
 					  </table>
 				</div>

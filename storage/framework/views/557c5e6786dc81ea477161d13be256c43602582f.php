@@ -10,93 +10,54 @@
 					<div class="table-title">
 						<h3>Candidates List for Software Engineer</h3>
 					</div>
+					<?php if(Session::get('success')): ?>
+                     <br/>
+                            <div class="alert alert-success" id="message">
+                                <h3 class=" text-center text-success"> <?php echo e(Session::get('success')); ?></h3>
+                            </div>
+					<?php endif; ?>
+					<?php if(Session::get('error')): ?>
+                     <br/>
+                            <div class="alert alert-danger" id="message">
+                                <h3 class=" text-center text-danger"> <?php echo e(Session::get('error')); ?></h3>
+                            </div>
+                    <?php endif; ?>
 					<table class="table table-striped table-bordered">
 					    <thead>
 					      	<tr>
-						        <th>#No</th>
+						        
+						        <th>Job Title</th>
 						        <th>Full Name</th>
 					        	<th>Email</th>
 					        	<th>Mobile</th>
+					        	<th>Status</th>
 					        	<th>Action</th>
 					      	</tr>
 					    </thead>
 					    <tbody>
-					      	<tr>
-						        <td>01</td>
-						        <td>Jamal Hossain</td>
-						        <td>jamal@gmail.com</td>
-						        <td>01728242323</td>
+							<?php $__currentLoopData = $candidates; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $candidate): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<tr>
+						        <td><?php echo e($candidate->job_title); ?></td>
+						        <td><?php echo e($candidate->fname); ?> <?php echo e($candidate->lname); ?></td>
+						        <td><?php echo e($candidate->email); ?></td>
+						        <td><?php echo e($candidate->phone_no); ?></td>
+						        <td><?php echo e($candidate->status); ?></td>
 						        <td>
 						        	<ul>
 						        		<li>
-						        			<a href="#" class="select">Select</a>
+						        			<a href="<?php echo e(route('status-change',['status'=>'select','id'=>$candidate->job_apply_id])); ?>" class="select">Select</a>
 						        		</li>
 						        		<li>
-						        			<a href="#" class="pending">Pending</a>
+						        			<a href="<?php echo e(route('status-change',['status'=>'pending','id'=>$candidate->job_apply_id])); ?>" class="pending">Pending</a>
 						        		</li>
 						        		<li>
-						        			<a href="#" class="elinimate">Reject</a>
+						        			<a href="<?php echo e(route('status-change',['status'=>'reject','id'=>$candidate->job_apply_id])); ?>" class="elinimate">Reject</a>
 						        		</li>
 						        	</ul>
 						        </td>
 					      	</tr>
-					      	<tr>
-						        <td>02</td>
-						        <td>Jamal Hossain</td>
-						        <td>jamal@gmail.com</td>
-						        <td>01728242323</td>
-						        <td>
-						        	<ul>
-						        		<li>
-						        			<a href="#" class="select">Select</a>
-						        		</li>
-						        		<li>
-						        			<a href="#" class="pending">Pending</a>
-						        		</li>
-						        		<li>
-						        			<a href="#" class="elinimate">Reject</a>
-						        		</li>
-						        	</ul>
-						        </td>
-					      	</tr>
-					      	<tr>
-						        <td>03</td>
-						        <td>Jamal Hossain</td>
-						        <td>jamal@gmail.com</td>
-						        <td>01728242323</td>
-						        <td>
-						        	<ul>
-						        		<li>
-						        			<a href="#" class="select">Select</a>
-						        		</li>
-						        		<li>
-						        			<a href="#" class="pending">Pending</a>
-						        		</li>
-						        		<li>
-						        			<a href="#" class="elinimate">Reject</a>
-						        		</li>
-						        	</ul>
-						        </td>
-					      	</tr>
-					      	<tr>
-						        <td>04</td>
-						        <td>Jamal Hossain</td>
-						        <td>jamal@gmail.com</td>
-						        <td>01728242323</td>
-						        <td>
-						        	<ul>
-						        		<li>
-						        			<a href="#" class="select">Select</a>
-						        		</li>
-						        		<li>
-						        			<a href="#" class="pending">Pending</a>
-						        		</li>
-						        		<li>
-						        			<a href="#" class="elinimate">Reject</a>
-						        		</li>
-						        	</ul>
-						        </td>
-					      	</tr>
+							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+					      	
 					    </tbody>
 					  </table>
 				</div>

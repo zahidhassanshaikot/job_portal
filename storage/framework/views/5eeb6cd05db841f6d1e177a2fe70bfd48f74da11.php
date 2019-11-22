@@ -4,6 +4,7 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-2 col-lg-2"></div>
 				<div class="col-sm-12 col-md-6 col-lg-8">
+		
 					<form action="<?php echo e(route('save-user-info')); ?>" method="POST" class="register-form">
 						<?php echo csrf_field(); ?>
 						<h2>Register Form</h2>

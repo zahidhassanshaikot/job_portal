@@ -33,22 +33,28 @@
 			      </li>
 			      <li class="nav-item">
 			        <a class="nav-link js-scroll-trigger" href="{{ route('jobs') }}">Jobs</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link js-scroll-trigger" href="{{ route('my-job') }}">My Jobs</a>
-			      </li>
+				  </li>
+				 
 			      <li class="nav-item">
 			        <a class="nav-link js-scroll-trigger" href="{{ route('training') }}">Training</a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger dropdown" href="{{ route('employer') }}">Employers</a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify">3</span></div></a>
-			      </li>
-			      <li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger" href="{{ route('post-job') }}">Post Job</a>
 				  </li>
+				@auth
+				<li class="nav-item">
+			        <a class="nav-link js-scroll-trigger" href="{{ route('my-job') }}">My Jobs</a>
+				</li>
+				 @if(Auth::user()->hasRole(['Admin', 'Employer']))
+				 <li class="nav-item dropdown menu-padding">
+			        <a class="nav-link js-scroll-trigger dropdown" href="{{ route('employer') }}">Post Job</a>
+			      </li>
+			      {{-- <li class="nav-item dropdown menu-padding">
+			        <a class="nav-link js-scroll-trigger" href="{{ route('post-job') }}">Post Job</a>
+				  </li> --}}
+				@endif
+				<li class="nav-item dropdown menu-padding">
+			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify">3</span></div></a>
+				  </li>
+				@endauth
+				
 				  @guest
 					<li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger" href="{{ route('user-login') }}">Login</a>
