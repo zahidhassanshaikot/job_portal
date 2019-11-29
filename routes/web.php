@@ -34,7 +34,9 @@ Route::get('status-change/{status}/{id}', 'JobController@changeStatus')->name('s
 
 
 Route::get('training', 'TrainingController@training')->name('training');
-Route::get('single-training-post', 'TrainingController@singleTrainingPost')->name('single-training-post');
+Route::get('single-training-post/{id}', 'TrainingController@singleTrainingPost')->name('single-training-post');
+Route::get('training-post', 'TrainingController@trainingPost')->name('training-post');
+Route::post('save-training-post', 'TrainingController@saveTrainingPost')->name('save-training-post');
 
 Route::get('employer', 'EmployerController@employer')->name('employer');
 

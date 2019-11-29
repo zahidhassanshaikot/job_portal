@@ -8,58 +8,29 @@
 						<h2>Training</h2>
 					</div>
 				</div>
-				<div class="col-sm-12 col-md-4 col-lg-4">
-					<article class="job-feature">
-						<div class="job-details">
-							<div class="feature-image">
-								<img src="<?php echo e(asset('design')); ?>/img/training1.jpg" alt="">
+				<?php $__currentLoopData = $trainings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $training): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<article class="job-feature">
+							<div class="job-details">
+								<div class="feature-image">
+									<img src="<?php echo e(asset($training->image)); ?>" alt="img">
+								</div>
+								<h2 class="job-title"><a href="<?php echo e(route('single-training-post',['id'=>$training->id])); ?>"><?php echo e($training->training_title); ?></a></h2>
+								<p>TK: <span><?php echo e($training->tk); ?></span></p>
+								<div class="job-description">
+									<p>Total Hour: <?php echo e($training->total_hour); ?></p>
+								</div>
+								<div class="apply-btn">
+									<a href="<?php echo e(route('single-training-post',['id'=>$training->id])); ?>">Enrol Now</a>
+								</div>
 							</div>
-							<h2 class="job-title"><a href="<?php echo e(route('single-training-post')); ?>">Professional Web Design</a></h2>
-							<p>TK: <span>15000</span></p>
-							<div class="job-description">
-								<p>Total Hour: 20</p>
-							</div>
-							<div class="apply-btn">
-								<a href="<?php echo e(route('single-training-post')); ?>">Enrol Now</a>
-							</div>
-						</div>
-					</article>
-				</div>
-				<div class="col-sm-12 col-md-4 col-lg-4">
-					<article class="job-feature">
-						<div class="job-details">
-							<div class="feature-image">
-								<img src="<?php echo e(asset('design')); ?>/img/training2.jpg" alt="">
-							</div>
-							<h2 class="job-title"><a href="<?php echo e(route('single-training-post')); ?>">Web Design and Development</a></h2>
-							<p>TK: <span>20000</span></p>
-							<div class="job-description">
-								<p>Total Hour: 30</p>
-							</div>
-							<div class="apply-btn">
-								<a href="<?php echo e(route('single-training-post')); ?>">Enrol Now</a>
-							</div>
-						</div>
-					</article>
-				</div>
-				<div class="col-sm-12 col-md-4 col-lg-4">
-					<article class="job-feature">
-						<div class="job-details">
-							<div class="feature-image">
-								<img src="<?php echo e(asset('design')); ?>/img/training3.jpg" alt="">
-							</div>
-							<h2 class="job-title"><a href="<?php echo e(route('single-training-post')); ?>">Professional Web Development(Laravel)</a></h2>
-							<p>TK: <span>25000</span></p>
-							<div class="job-description">
-								<p>Total Hour: 40</p>
-							</div>
-							<div class="apply-btn">
-								<a href="<?php echo e(route('single-training-post')); ?>">Enrol Now</a>
-							</div>
-						</div>
-					</article>
-				</div>
+						</article>
+					</div> 
+				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+	
 			</div>
+			<?php echo $trainings->links(); ?>
+
 		</div>
 	</section>
 <?php $__env->stopSection(); ?>

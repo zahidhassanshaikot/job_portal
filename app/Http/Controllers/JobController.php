@@ -47,6 +47,7 @@ class JobController extends Controller
         $job->email=$request->email;
         $job->salary=$request->salary;
         $job->job_description=$request->job_description;
+        $job->short_description=$request->short_description;
         $job->last_date=$request->last_date;
         $job->company_name=$request->company_name;
         $job->web_url=$request->web_url;
@@ -108,7 +109,14 @@ class JobController extends Controller
         return view('back-end.candidate-list',['candidates'=>$candidates]);
     }
     public function candidateStatus($status){
-        return view('back-end.candidate-status');
+        $candidates = JobApply::join('users', 'job_apply.user_id', '=', 'users.id')
+            ->join('job_post', 'job_apply.job_post_id', '=', 'job_post.id')
+            ->select('users.*', 'job_post.job_title', 'job_apply.status', 'job_apply.id as job_apply_id')
+            ->orderBy('job_apply.created_at', 'DESC')
+            ->where('job_post.user_id', '=', Auth::user()->id)
+            ->where('job_apply.status', '=', $status)
+            ->get();
+        return view('back-end.candidate-status',compact('candidates'));
     }
     public function changeStatus($status,$id){ 
         $jobApply = JobApply::find($id);

@@ -23,6 +23,9 @@ class DeshboardController extends Controller
         return view('back-end.home');
     }
     public function userLogin(){
+        if (!session()->has('link')) {
+            session(['link' => url()->previous()]);
+        }
         return view('back-end.login');
     }
     public function userReg(){

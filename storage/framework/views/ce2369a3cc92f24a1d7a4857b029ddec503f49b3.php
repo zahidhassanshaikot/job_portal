@@ -1,5 +1,4 @@
-@extends('back-end.master')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 	<section id="job-page">
 		<div class="container">
@@ -10,13 +9,16 @@
 							<h3>Training Description</h3>
 						</div>
 						<div class="description">
-							{{ $training->short_description }}
+							<?php echo e($training->short_description); ?>
+
 						</div>
-						{!! $training->training_description !!}
+						<?php echo $training->training_description; ?>
+
 						
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('back-end.master', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

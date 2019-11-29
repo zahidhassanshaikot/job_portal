@@ -46,6 +46,9 @@
 				 <li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger dropdown" href="<?php echo e(route('employer')); ?>">Post Job</a>
 			      </li>
+				 <li class="nav-item dropdown menu-padding">
+			        <a class="nav-link js-scroll-trigger dropdown" href="<?php echo e(route('training-post')); ?>">Training Post</a>
+			      </li>
 			      
 				<?php endif; ?>
 				<li class="nav-item dropdown menu-padding">

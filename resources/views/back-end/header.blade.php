@@ -46,6 +46,9 @@
 				 <li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger dropdown" href="{{ route('employer') }}">Post Job</a>
 			      </li>
+				 <li class="nav-item dropdown menu-padding">
+			        <a class="nav-link js-scroll-trigger dropdown" href="{{ route('training-post') }}">Training Post</a>
+			      </li>
 			      {{-- <li class="nav-item dropdown menu-padding">
 			        <a class="nav-link js-scroll-trigger" href="{{ route('post-job') }}">Post Job</a>
 				  </li> --}}

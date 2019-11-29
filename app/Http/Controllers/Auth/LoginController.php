@@ -21,15 +21,13 @@ class LoginController extends Controller
     */
     protected function authenticated(Request $request, $user)
     {
-        if($user->hasRole('Admin')) {
-          
-          
-          return redirect('/');
-            // return redirect('emp.dashboard');
+        if($user->hasRole('Admin')) { 
+            return redirect(session('link'));
+        //   return redirect('/'); 
         
         } else if ($user->hasRole('User')){
-
-            return redirect('/');
+            return redirect(session('link'));
+            // return redirect('/');
         }else{
             $request->session()->invalidate();
             return redirect('/login');
@@ -37,8 +35,15 @@ class LoginController extends Controller
     }
 
 
-
     use AuthenticatesUsers;
+
+    public function showLoginForm()
+    {
+        if (!session()->has('link')) {
+            session(['link' => url()->previous()]);
+        }
+        return view('auth.login');
+    }
 
     /**
      * Where to redirect users after login.

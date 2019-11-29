@@ -8,20 +8,8 @@
 				</div>
 				<div class="col-sm-12 col-md-6 col-lg-8">
 					<div class="table-title">
-						<h3>Candidates List for Software Engineer</h3>
+						<h3>Select List for Software Engineer</h3>
 					</div>
-					<?php if(Session::get('success')): ?>
-                     <br/>
-                            <div class="alert alert-success" id="message">
-                                <h3 class=" text-center text-success"> <?php echo e(Session::get('success')); ?></h3>
-                            </div>
-					<?php endif; ?>
-					<?php if(Session::get('error')): ?>
-                     <br/>
-                            <div class="alert alert-danger" id="message">
-                                <h3 class=" text-center text-danger"> <?php echo e(Session::get('error')); ?></h3>
-                            </div>
-                    <?php endif; ?>
 					<table class="table table-striped table-bordered">
 					    <thead>
 					      	<tr>
