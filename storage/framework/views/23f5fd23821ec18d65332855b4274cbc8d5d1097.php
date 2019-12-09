@@ -12,6 +12,9 @@
 
   <?php echo $__env->yieldContent('content'); ?>
 
-  <?php echo $__env->make('popup-message/popup-message', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  
+<?php if(auth()->guard()->check()): ?>     
   <?php echo $__env->make('popup-message/modal', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php endif; ?>
+
   <?php echo $__env->make('back-end.footer', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

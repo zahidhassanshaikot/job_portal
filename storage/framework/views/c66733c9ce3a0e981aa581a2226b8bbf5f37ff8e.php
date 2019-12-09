@@ -51,8 +51,11 @@
 			      </li>
 			      
 				<?php endif; ?>
+				<?php
+					$messages=App\Message::where('receiver_id',Auth::user()->id)->where('seen',0)->orderBy('id','DESC')->count()
+				?>
 				<li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify">3</span></div></a>
+			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify"><?php echo e($messages); ?></span></div></a>
 				  </li>
 				<?php endif; ?>
 				

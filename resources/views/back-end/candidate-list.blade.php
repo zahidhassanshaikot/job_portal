@@ -54,7 +54,40 @@
 						        		<li>
 						        			<a href="{{ route('status-change',['status'=>'reject','id'=>$candidate->job_apply_id]) }}" class="elinimate">Reject</a>
 						        		</li>
-						        	</ul>
+						        		<li>
+											{{-- <a href="{{ route('send-message',['id'=>$candidate->id]) }}" class="select">Message</a> --}}
+											<button type="button" class="select" data-toggle="modal" data-target="#exampleModalCenter">
+												Message
+											</button>
+						        		</li>
+									</ul>
+									
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLongTitle">Message</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<form action="{{ route('send-message',['id'=>$candidate->id]) }}" method="POST">
+												@csrf 
+										<div class="modal-body">
+											
+												<textarea name="message" class="form-control" id="" cols="10" rows="5"></textarea>
+											
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="submit" class="btn btn-primary">Send</button>
+										</div>
+										</form>
+										</div>
+									</div>
+									</div>
+
 						        </td>
 					      	</tr>
 							@endforeach 

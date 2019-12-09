@@ -40,6 +40,9 @@
 						        		</li>
 						        		<li>
 						        			<a href="<?php echo e(route('status-change',['status'=>'reject','id'=>$candidate->job_apply_id])); ?>" class="elinimate">Reject</a>
+										</li>
+										<li>
+						        			<a href="#" class="select">Message</a>
 						        		</li>
 						        	</ul>
 						        </td>

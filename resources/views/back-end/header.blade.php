@@ -53,8 +53,11 @@
 			        <a class="nav-link js-scroll-trigger" href="{{ route('post-job') }}">Post Job</a>
 				  </li> --}}
 				@endif
+				@php
+					$messages=App\Message::where('receiver_id',Auth::user()->id)->where('seen',0)->orderBy('id','DESC')->count()
+				@endphp
 				<li class="nav-item dropdown menu-padding">
-			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify">3</span></div></a>
+			        <a class="nav-link js-scroll-trigger dropdown" href="#" data-toggle="modal" data-target="#notification">Notification <div class="notification"><span class="notify">{{ $messages }}</span></div></a>
 				  </li>
 				@endauth
 				

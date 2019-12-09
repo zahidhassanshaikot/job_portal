@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\JobApply;
 use App\JobPost;
+use App\Message;
 use Illuminate\Http\Request;
 use DB;
 use File;
@@ -123,5 +124,24 @@ class JobController extends Controller
         $jobApply->status = $status;
         $jobApply->save();
         return redirect()->back()->with('success','Successfully change status');
+    }
+    public function sendMessage(Request $request,$id){ 
+        $this->validate($request, [
+            'message' => 'required|max:300|min:2'
+        ]);
+
+        $message=new Message();
+        $message->receiver_id=$id;
+        $message->sender_id=Auth::user()->id;
+        $message->message=$request->message;
+        $message->save();
+        return redirect()->back()->with('success','Successfully send message');
+    }
+    public function seenMessage($id){ 
+ 
+        $message=Message::find($id);
+        $message->seen=1;
+        $message->save();
+        return redirect()->back()->with('success','Message Seen');
     }
 }

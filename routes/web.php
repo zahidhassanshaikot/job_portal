@@ -40,6 +40,9 @@ Route::post('save-training-post', 'TrainingController@saveTrainingPost')->name('
 
 Route::get('employer', 'EmployerController@employer')->name('employer');
 
+Route::post('send-message/{id}', 'JobController@sendMessage')->name('send-message');
+Route::get('seen-message/{id}', 'JobController@seenMessage')->name('seen-message');
+
 
 
 

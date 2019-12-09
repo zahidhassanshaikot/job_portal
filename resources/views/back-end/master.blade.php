@@ -12,6 +12,9 @@
 
   @yield('content')
 
-  @include('popup-message/popup-message')
+  {{-- @include('popup-message/popup-message') --}}
+@auth     
   @include('popup-message/modal')
+@endauth
+
   @include('back-end.footer')

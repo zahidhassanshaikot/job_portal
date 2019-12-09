@@ -53,7 +53,40 @@
 						        		<li>
 						        			<a href="<?php echo e(route('status-change',['status'=>'reject','id'=>$candidate->job_apply_id])); ?>" class="elinimate">Reject</a>
 						        		</li>
-						        	</ul>
+						        		<li>
+											
+											<button type="button" class="select" data-toggle="modal" data-target="#exampleModalCenter">
+												Message
+											</button>
+						        		</li>
+									</ul>
+									
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLongTitle">Message</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<form action="<?php echo e(route('send-message',['id'=>$candidate->id])); ?>" method="POST">
+												<?php echo csrf_field(); ?> 
+										<div class="modal-body">
+											
+												<textarea name="message" class="form-control" id="" cols="10" rows="5"></textarea>
+											
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="submit" class="btn btn-primary">Send</button>
+										</div>
+										</form>
+										</div>
+									</div>
+									</div>
+
 						        </td>
 					      	</tr>
 							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
